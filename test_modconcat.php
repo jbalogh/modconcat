@@ -48,11 +48,11 @@ class SoMuchFail extends UnitTestCase {
 
         $this->assertEqual(
           stylesheets(array('one.css', 'foo/two.css'), array('media' => 'screen')),
-          '<link rel="stylesheet" type="text/css" href="one.css,foo/two.css" media="screen"/>');
+          '<link rel="stylesheet" type="text/css" href="??one.css,foo/two.css" media="screen"/>');
 
         $this->assertEqual(
           scripts(array('one.js', 'two.js')),
-          '<script type="text/javascript" src="one.js,two.js" ></script>');
+          '<script type="text/javascript" src="??one.js,two.js" ></script>');
     }
 }
 

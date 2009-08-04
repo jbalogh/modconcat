@@ -40,8 +40,8 @@ function scripts($files, $attributes=array()) {
  * taking advantage of mod_concat if CONCAT is True.
  */
 function _concat($template, $files, $attributes=array()) {
-    if (defined('MOD_CONCAT') && MOD_CONCAT === True) {
-        $files = array(join(',', $files));
+    if (defined('MOD_CONCAT') && MOD_CONCAT === True && count($files) > 1) {
+        $files = array('??' . join(',', $files));
     }
 
     $extra = _attrs($attributes);
